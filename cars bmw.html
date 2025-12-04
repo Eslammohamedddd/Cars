@@ -3,8 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>BMW</title>
+    <style>
+        
+
+
+     
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+}
+
+/* Navbar Container */
+.content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    margin-top: 9px;
+    border: 3px #e0cfcf solid;
+    position: fixed;
+    top:30px;
+    right: 30px;
+    left: 30px;
+    background-color: white;
+    box-shadow: 0 10px 26px #968989;
+    border-radius: 8px;
+    z-index: 10;
+}
+
+/* Logo Area */
+.logos{
+    display: flex;
+    gap: 15px;
+    font-family: sans-serif;
+    align-items: center;
+}
+
+.nav ul{
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav ul li a{
+    color: black;
+    text-decoration: none;
+    font-size: 22px;
+    transition: 0.3s;
+    padding: 5px 10px;
+    animation: typing 0.6s ;
+}
+@keyframes typing{
+    100%,0%{opacity: 0;}
+    80%,60%{opacity: 1;}
+}
+
+.nav ul li a:hover{
+    color: #000000;
+    background-color: #2508a6;
+    border-radius: 5px;
+}
+
+.vid {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+}
+
+.p  {
+    position: absolute;
+    top: 300px;
+    left: 35px;
+    font-size: 25px;
+}
+
+.textlogo{
+    position: absolute;
+    top: 350px;
+    left: 35px;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+/* ==== سكشن الثلاث صور زي ما هو بس بزود مسافة فوق ==== */
+.three-items {
+    position: absolute;
+    top: 650px;
+    right: 25px;
+    left: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 120px; /* إضافة فقط */
+}
+
+.item {
+    flex: 1;
+    text-align: center;
+}
+
+.item img,
+.item video {
+    width: 100%;
+    height: 750px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.item h2 {
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 600;
+}
+.four{
+    position: absolute;
+    top: 1600px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center ;
+    margin: 50px;
+    margin-right:100px ;
+    
+}
+.h1 ,.h3{
+    margin: 100px;
+    font-family: monospace;
+}
+.h3{
+     position: absolute;
+     top: 380px;
+     right: 60px;
+     font-size: 25px;
+}
+.h1{
+    font-size: 32px;
+}
+.five{
+    position: absolute;
+    top: 2350px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px; /* بدل margin-right */
+}
+.btn{
+    position: absolute;
+    top: 475px;
+    left: 40px;
+    width: 180px;
+    height: 55px;
+    background-color: #0000ff;
+    color: white;
+    font-size: 22px;
+    font-weight: 500;
+    font-family:monospace;
+}
+
+.vid2{
+    margin-right: 0; 
+}
+.all{
+    position: absolute;
+    top: 3200px;
+    z-index: 1;
+}
+.all {
+    display: inline-block;
+    transition: transform 10s ease; /* مهم لتنعيم الزوم */
+    box-shadow: 0  0 25px #0032;
+}
+
+.all:hover {
+    transform: scale(1.5);
+    background-color: #002;
+}
+
+.text {
+    position: absolute;
+    top: 3890px;
+    left: 190px;
+    margin-bottom: 50px;
+    z-index: 100;
+}
+
+
+
+#name {
+    padding: 50px 0;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 4000px;
+    left: 400px;
+    align-items: center;
+}
+
+.slider {
+    position: relative;
+    width: 800px;   /* حجم السلايدر */
+    height: 550px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.slide {
+    min-width: 100%; 
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.slide:hover img {
+    transform: scale(1.1);       /* زوم خفيف عند المرور */
+    filter: brightness(0.7);     /* تغميق */
+}
+
+.caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 20px;
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+/* الأسهم */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 3;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.7);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+
+.adds{
+    position: absolute;
+    top: 5000px;
+    left: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    
+}
+.text1{
+    position: absolute;
+    top: 400px;
+    left: 60px;
+    
+}
+
+
+
+
+    </style>
+    
 
   
 </head>
@@ -211,7 +504,38 @@
                     <P style="font-family: monospace; font-size: 25px;">soundtrack of an icons</P>
                     <h1   style="font-family: monospace; font-size: 35px;"class="vide1">FIVE Playlists celebrating 50 years </h1><br><br><br><br><br><br><br><br>
                 </div>
-                <script src="script.js"></script>
+</section>
+    <script>
+
+
+        
+
+
+
+
+    const slides = document.querySelector('#name .slides');
+const slideCount = document.querySelectorAll('#name .slide').length;
+let index = 0;
+
+document.querySelector('#name .next').addEventListener('click', () => {
+    index++;
+    if(index >= slideCount) index = 0;
+    updateSlider();
+});
+
+document.querySelector('#name .prev').addEventListener('click', () => {
+    index--;
+    if(index < 0) index = slideCount - 1;
+    updateSlider();
+});
+
+function updateSlider() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+}
+
+
+    </script>
 
 </body>
 </html>
+
